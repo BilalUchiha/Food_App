@@ -1,0 +1,12 @@
+{% extends 'base/main.html' %} {% block content %}
+
+<form class="shadow-lg p-4" method="post">
+  {% csrf_token %}
+
+  <label for="item">مقدار</label>
+  <input type="number" name="item" class="form-control" />
+
+  <input type="submit" class="btn btn-success mt-2" value="سفارش" />
+</form>
+
+{% endblock %}

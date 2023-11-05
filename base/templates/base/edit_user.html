@@ -1,0 +1,38 @@
+{% extends 'base/main.html' %}{% block title %} {{user.username}} {% endblock %}
+<!-- test -->
+{% block content %}
+
+<form method="post">
+  {% csrf_token %}
+
+  <label for="username" class="form-label">نام</label>
+  <input
+    type="text"
+    name="username"
+    class="form-control"
+    value="{{user.username}}"
+  />
+
+  <label for="username" class="form-label">ایمیل</label>
+  <input
+    type="email"
+    name="email"
+    class="form-control"
+    value="{{user.email}}"
+  />
+
+  <label for="username" class="form-label">موبایل</label>
+  <input
+    type="text"
+    name="mobile"
+    class="form-control"
+    value="{{user.mobile}}"
+  />
+
+  <label for="username" class="form-label">رمز ورود</label>
+  <input type="password" name="password" class="form-control" />
+
+  <input type="submit" value="ویرایش" class="btn btn-success mt-2" />
+</form>
+
+{% endblock %}

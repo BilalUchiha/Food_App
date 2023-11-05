@@ -1,0 +1,36 @@
+{% extends 'base/main.html' %}{% block title %} Users {% endblock %}
+<!-- test -->
+{% block content %}
+<a href="{% url 'add_admin' %}" class="btn btn-success">اضافه کردن ادمین</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th>نام</th>
+      <th>ایمیل</th>
+      <th>شماره تلفن</th>
+      <th>ادرس</th>
+      <th>عملیات</th>
+    </tr>
+  </thead>
+  {% for user in users %}
+  <tbody>
+    <tr>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.mobile}}</td>
+      <td>{{user.address}}</td>
+      <td class="d-flex">
+        <form action="{% url 'delete_user' user.id %}">
+          <input type="submit" class="btn btn-danger" value="حذف" />
+        </form>
+
+        <a href="{% url 'edit_user' user.id %}" class="btn btn-primary"
+          >ویرایش</a
+        >
+      </td>
+    </tr>
+  </tbody>
+  {% endfor %}
+</table>
+
+{% endblock %}

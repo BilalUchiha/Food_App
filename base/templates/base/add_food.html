@@ -1,0 +1,28 @@
+{% extends 'base/main.html' %} {% block title %} Add Food {% endblock %}
+<!-- test -->
+{% block content %}
+
+<form class="shadow-lg p-4" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+
+  <label for="name" class="form-label">نام غذا</label>
+  <input type="text" name="name" class="form-control" />
+
+  <label for="price" class="form-label">قیمت</label>
+  <input type="text" name="price" class="form-control" />
+
+  <label for="type" class="form-label">نوعیت</label>
+  <select name="type" class="form-control">
+    <option value="دیسیر">دیسیر</option>
+    <option value="فست فود">فست فود</option>
+    <option value="گوشت">گوشت</option>
+    <option value="سبزی">سبزی</option>
+    <option value="نوشیدنی">نوشیدنی</option>
+  </select>
+
+  <label for="image" class="form-label">عکس غذا</label>
+  <input type="file" name="image" class="form-control" />
+  <input type="submit" class="btn btn-success mt-2" value="ثبت" />
+</form>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base/main.html' %} {% load static %}
+<!-- test -->
+{% block title %} Welcome {% endblock %}
+<!-- test -->
+{% block content %}
+<div class="container">
+  <h1 class="welcome-title">خوش آمدید به FoodApp</h1>
+  <p class="welcome-message">
+    FoodApp یک اپلیکیشن برای سفارش آنلاین غذاست که با تمرکز بر روی ارتقاء سلامت
+    غذاها و به کارگیری تکنولوژی اطلاعات و ICT ایجاد شده است. ما به شما امکان
+    می‌دهیم تا به راحتی غذاهای خوشمزه و سالم را از رستوران‌ها و آشپزخانه‌های
+    محلی دریافت کنید.
+  </p>
+  <p class="welcome-message">
+    با استفاده از FoodApp، شما می‌توانید از تنوع منوهای غذایی لذت ببرید و به
+    سادگی غذاهای مختلف را سفارش دهید. ما از کیفیت و سلامت غذاها مراقبت می‌کنیم
+    تا تجربه شما بهترین باشد.
+  </p>
+  <p class="welcome-message">
+    خوش آمدید به دنیای FoodApp، جایی که شما می‌توانید به سادگی و با اطمینان
+    غذاهای مورد علاقه خود را سفارش دهید و لذت ببرید.
+  </p>
+  <div class="image-container">
+    <img
+      src="{% static 'images/food1.jpg' %}"
+      alt="Food Image 1"
+      class="food-image"
+    />
+    <img
+      src="{% static 'images/food2.jpg' %}"
+      alt="Food Image 2"
+      class="food-image"
+    />
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ثبت نام ادمین</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        margin-top: 50px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        font-weight: bold;
+        float: right;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+
+      .error-message {
+        color: red;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>ثبت‌نام</h1>
+      <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="id_username">نام کاربری</label>
+          <input
+            type="text"
+            id="id_username"
+            name="username"
+            style="direction: rtl"
+          />
+          <span class="error-message">{{ form.username.errors }}</span>
+        </div>
+        <div class="form-group">
+          <label for="id_email">ایمیل</label>
+          <input
+            type="email"
+            id="id_email"
+            name="email"
+            style="direction: rtl"
+          />
+          <span class="error-message">{{ form.email.errors }}</span>
+        </div>
+        <div class="form-group">
+          <label for="id_password1">رمز عبور</label>
+          <input
+            type="password"
+            id="id_password1"
+            name="password"
+            style="direction: rtl"
+          />
+          <span class="error-message">{{ form.password1.errors }}</span>
+        </div>
+
+        <div class="form-group">
+          <label for="id_mobile">موبایل</label>
+          <input
+            type="text"
+            id="id_mobile"
+            name="mobile"
+            style="direction: rtl"
+          />
+          <span class="error-message">{{ form.mobile.errors }}</span>
+        </div>
+
+        <div class="form-group">
+          <label for="id_address">آدرس</label>
+          <input
+            type="text"
+            id="id_address"
+            name="address"
+            style="direction: rtl"
+          />
+          <span class="error-message">{{ form.address.errors }}</span>
+        </div>
+
+        <input type="submit" value="ثبت‌نام" />
+      </form>
+      <a href="{% url 'login' %}">قبلاً حساب کاربری دارید؟</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+{% extends 'base/main.html' %} {% block title %}{{user.username}} {% endblock %}
+<!-- test -->
+{% block content %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>نام</th>
+      <th>ایمیل</th>
+      <th>شماره تلفن</th>
+      <th>ادرس</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.mobile}}</td>
+      <td>{{user.address}}</td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

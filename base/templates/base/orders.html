@@ -1,0 +1,30 @@
+{% extends 'base/main.html' %}{% block title %} Orders {% endblock %}
+<!-- test -->
+{% block content %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>مشتری</th>
+      <th>تلفن</th>
+      <th>نام غذا</th>
+      <th>تعداد</th>
+      <th>قیمت</th>
+      <th>مجموع</th>
+    </tr>
+  </thead>
+  {% for order in orders %}
+  <tbody>
+    <tr>
+      <td>{{order.customer}}</td>
+      <td>{{order.phone}}</td>
+      <td>{{order.food}}</td>
+      <td>{{order.item}}</td>
+      <td>{{order.price}}</td>
+      <td>{{order.total}}</td>
+    </tr>
+  </tbody>
+  {% endfor %}
+</table>
+
+{% endblock %}
